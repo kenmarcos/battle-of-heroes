@@ -14,7 +14,9 @@ const Characters = ({ children }: TesteProps) => {
 
   const divClassName = twMerge(
     "flex gap-6 container",
-    !!Object.keys(player1).length ? "flex-row-reverse" : "flex-row",
+    !!Object.keys(player1).length
+      ? "flex-row-reverse animate-slide-left"
+      : "flex-row",
   );
 
   return <section className={divClassName}>{children}</section>;

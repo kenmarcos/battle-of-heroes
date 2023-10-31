@@ -12,11 +12,13 @@ const CharacterInfo = () => {
   return (
     <section className="w-5/12">
       {!Object.keys(character).length && (
-        <p className="text-center text-2xl">Escolha um personagem</p>
+        <p className="animate-fade-in  mx-auto flex h-full max-w-[322px] items-center text-center text-2xl">
+          Choose your hero and get ready for the battle!
+        </p>
       )}
 
       {!!Object.keys(character).length && (
-        <div className="relative overflow-hidden rounded-lg ">
+        <div className="animate-fade-in relative overflow-hidden rounded-lg">
           <div>
             <Image
               src={images.lg}
@@ -37,22 +39,22 @@ const CharacterInfo = () => {
 
             <div className="grid grid-cols-2">
               <div className="flex gap-4">
-                <p>Gênero:</p>
+                <p>Gender:</p>
                 <p>{appearance.gender}</p>
               </div>
 
               <div className="flex gap-4">
-                <p>Raça:</p>
+                <p>Race:</p>
                 <p>{appearance.race}</p>
               </div>
 
               <div className="flex gap-4">
-                <p>Altura:</p>
+                <p>Height:</p>
                 <p>{appearance.height[1]}</p>
               </div>
 
               <div className="flex gap-4">
-                <p>Massa:</p>
+                <p>Weight:</p>
                 <p>{appearance.weight[1]}</p>
               </div>
             </div>
