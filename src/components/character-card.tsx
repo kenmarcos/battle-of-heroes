@@ -1,17 +1,55 @@
-import Image from "next/image";
-import React from "react";
+"use client";
 
-import { Character } from "@/types/character";
+import Image from "next/image";
+
+import { usePlayersStore } from "@/store/players";
+import { Character, CharacterOnHover } from "@/types/character";
+import { PLAYER } from "@/types/enums";
 
 interface CharacterCardProps {
   character: Character;
 }
 
 const CharacterCard = ({ character }: CharacterCardProps) => {
+  const selectCharacter = usePlayersStore((state) => state.selectCharacter);
+  const player1 = usePlayersStore((state) => state.player1);
+
+  const handleSelectCharacter = () => {
+    if (!!Object.keys(player1).length) {
+      selectCharacter(PLAYER.player2, character);
+      return;
+    }
+
+    selectCharacter(PLAYER.player1, character);
+
+    usePlayersStore.setState({
+      characterOnHover: {} as CharacterOnHover,
+    });
+  };
+
+  const handleHoverCharacter = () => {
+    usePlayersStore.setState({
+      characterOnHover: {
+        name: character.name,
+        images: character.images,
+        appearance: character.appearance,
+      },
+    });
+  };
+
+  const handleLeaveCharacter = () => {
+    usePlayersStore.setState({
+      characterOnHover: {} as CharacterOnHover,
+    });
+  };
+
   return (
     <div
-      className="after:bg-name-gradient group relative overflow-hidden rounded-lg after:absolute after:bottom-0 after:w-full after:break-words after:py-3 after:text-center after:text-2xl after:opacity-0 after:duration-700 after:content-[attr(after-dynamic-value)] hover:shadow-lg hover:shadow-primary hover:after:opacity-100"
+      className="after:bg-info-gradient group relative cursor-pointer overflow-hidden rounded-lg after:absolute after:bottom-0 after:w-full after:break-words after:py-3 after:text-center after:text-2xl after:opacity-0 after:duration-700 after:content-[attr(after-dynamic-value)] hover:shadow-lg hover:shadow-primary hover:after:opacity-100"
       after-dynamic-value={character.name}
+      onClick={handleSelectCharacter}
+      onMouseEnter={handleHoverCharacter}
+      onMouseLeave={handleLeaveCharacter}
     >
       <Image
         src={character.images.sm}

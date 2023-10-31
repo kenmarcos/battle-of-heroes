@@ -19,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={oxanium.className}>
-        <Header />
+        <div className="flex flex-col">
+          <Header />
 
-        {children}
+          <main className="flex-1">{children}</main>
+        </div>
       </body>
     </html>
   );

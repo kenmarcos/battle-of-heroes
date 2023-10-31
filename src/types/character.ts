@@ -54,3 +54,9 @@ export interface Images {
   md: string;
   lg: string;
 }
+
+export interface CharacterOnHover {
+  name: string;
+  images: Images;
+  appearance: Appearance;
+}
