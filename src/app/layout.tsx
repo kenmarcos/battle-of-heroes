@@ -3,6 +3,7 @@ import { Oxanium } from "next/font/google";
 
 import Header from "@/components/header";
 import "./globals.css";
+import TanstackProvider from "@/providers/TanstackProvider";
 
 const oxanium = Oxanium({ subsets: ["latin"] });
 
@@ -19,11 +20,13 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={oxanium.className}>
-        <div className="flex flex-col">
-          <Header />
+        <TanstackProvider>
+          <div className="flex flex-col">
+            <Header />
 
-          <main className="flex-1">{children}</main>
-        </div>
+            <main className="flex-1">{children}</main>
+          </div>
+        </TanstackProvider>
       </body>
     </html>
   );
