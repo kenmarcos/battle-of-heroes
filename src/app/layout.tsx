@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Oxanium } from "next/font/google";
+
+import Header from "@/components/header";
 import "./globals.css";
 
 const oxanium = Oxanium({ subsets: ["latin"] });
@@ -16,7 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={oxanium.className}>{children}</body>
+      <body className={oxanium.className}>
+        <Header />
+
+        {children}
+      </body>
     </html>
   );
 }
