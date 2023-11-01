@@ -58,6 +58,12 @@ $ git clone git@github.com:<your_user>/battle-of-heroes.git
 $ cd battle-of-heroes/
 ```
 
+- Adicione o arquivo `.env.local` na raiz do projeto com o seguinte conteúdo:
+
+```Bash
+NEXT_PUBLIC_API_URL=http://homologacao3.azapfy.com.br/api/ps
+```
+
 - Instale as dependências:
 
 ```Bash
