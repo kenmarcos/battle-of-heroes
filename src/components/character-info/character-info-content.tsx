@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
 
-import { Appearance, Powerstats } from "@/types/character";
-
 interface CharacterInforContentProps {
   title?: string;
   children: ReactNode;

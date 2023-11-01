@@ -4,19 +4,11 @@ import React from "react";
 
 import BattleModal from "./battle-modal";
 import CharacterInfo from "./character-info/character-info";
-import CharacterSection from "./character-section";
 import { Button } from "./ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "./ui/dialog";
+import { Dialog, DialogTrigger } from "./ui/dialog";
 
 import { usePlayersStore } from "@/store/players";
 import { Character } from "@/types/character";
-import { PLAYER } from "@/types/enums";
 
 const BattlePreparation = () => {
   const player1 = usePlayersStore((state) => state.player1);

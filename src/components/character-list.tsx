@@ -2,7 +2,6 @@
 
 import CharacterCard from "./character-card";
 import CharacterSearch from "./character-search";
-import { Input } from "./ui/input";
 
 import { useCharactersStore } from "@/store/characters";
 import { Character } from "@/types/character";
