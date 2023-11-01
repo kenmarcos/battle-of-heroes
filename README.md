@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- CABEÇALHO -->
+<div id="readme-top" align="center">
+    <h1>
+        🦸 Battle of Heroes 🦸
+    </h1>
+    <p>
+        <a href="#%EF%B8%8F-sobre-o-projeto">Sobre o Projeto</a> •
+        <a href="#-funcionalidades">Funcionalidades</a> •
+        <a href="#%EF%B8%8F-instalação">Instalação</a> •
+        <a href="#%EF%B8%8F-tecnologias">Tecnologias</a> •
+        <a href="#-autor">Autor</a>
+    </p>
+</div>
 
-## Getting Started
+<div align="center">
+    <img src=".github/banner-01.png" width=800/>   
+</div>
 
-First, run the development server:
+<!-- SOBRE O PROJETO -->
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🖥️ Sobre o Projeto
+
+<!-- <div align="center">
+    <a href="http://marcos-kuribayashi.vercel.app/">
+        <img src="" alt="badge-usage" >
+    </a>
+</div> -->
+
+<br/>
+
+Este projeto é uma aplicação web de um jogo de batalha de heróis.
+
+A aplicação exibe uma lista de heróis que pode ser filtrada de acordo com o nome pesquisado. O usuário então escolhe dois personagens para uma batalha. O vencedor do combate será o personagem com a maior soma dos valores de cada poder que possui.
+
+<!-- FUNCIONALIDADES -->
+
+## 💡 Funcionalidades
+
+- [x] Listagem de heróis
+- [x] Filtragem de heróis
+- [x] Sistema de combate
+
+<!-- INSTALAÇÃO -->
+
+## ⚙️ Instalação
+
+> Esse é um projeto Next.js inicializado com `create-next-app`
+
+- Faça o fork desse repositório
+
+- Abra o terminal e clone o repositório:
+
+```Bash
+$ git clone git@github.com:<your_user>/battle-of-heroes.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Entre no diretório do projeto:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```Bash
+$ cd battle-of-heroes/
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Instale as dependências:
 
-## Learn More
+```Bash
+$ npm install
+# or
+$ yarn install
+```
 
-To learn more about Next.js, take a look at the following resources:
+- Execute o servidor de desenvolvimento:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```Bash
+$ npm run dev
+# or
+$ yarn dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Pronto! A aplicação, agora, pode ser acessada em um navegador através da url https://localhost:3000/.
 
-## Deploy on Vercel
+<!-- TECNOLOGIAS -->
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Tecnologias
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Para o desenvolvimento desse projeto, as seguintes ferramentas foram utilizadas:
+
+- **[React.js](https://pt-br.reactjs.org/)**
+- **[Next.js](https://nextjs.org/)**
+- **[TypeScript](https://www.typescriptlang.org/)**
+- **[Zustand](https://zustand-demo.pmnd.rs/)**
+- **[Tailwind](https://tailwindcss.com/)**
+- **[Shadcn UI](https://ui.shadcn.com/)**
+- **[Radix UI](https://www.radix-ui.com/)**
+- **[React Query](https://tanstack.com/query/latest/)**
+- **[React Hook Form](https://react-hook-form.com/)**
+- **[Zod](https://zod.dev/)**
+
+## 👨‍💻 Autor
+
+<img style="border-radius: 15%;" src="https://gitlab.com/uploads/-/system/user/avatar/8603970/avatar.png?width=400" width=70 alt="author-profile-picture"/>
+
+Marcos Kenji Kuribayashi
+
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/marcos-kuribayashi/) [![Gmail Badge](https://img.shields.io/badge/-marcosken13@gmail.com-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:marcosken13@gmail.com)
+
+---
+
+Desenvolvido por Marcos Kenji Kuribayashi 😉
