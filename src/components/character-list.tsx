@@ -3,18 +3,16 @@
 import CharacterCard from "./character-card";
 import CharacterSearch from "./character-search";
 
+import { api } from "@/services/api";
 import { useCharactersStore } from "@/store/characters";
 import { Character } from "@/types/character";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 
 const CharacterList = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["characters"],
     queryFn: async () => {
-      const { data } = await axios.get(
-        "http://homologacao3.azapfy.com.br/api/ps/metahumans",
-      );
+      const { data } = await api.get("/metahumans");
 
       useCharactersStore.setState({
         characters: data,
