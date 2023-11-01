@@ -84,6 +84,14 @@ module.exports = {
             boxShadow: "0 4px 6px -1px hsl(0 72.2% 50.6%)",
           },
         },
+        darken: {
+          from: {
+            filter: "grayscale(0%)",
+          },
+          to: {
+            filter: "grayscale(100%)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -91,6 +99,7 @@ module.exports = {
         "fade-in": "fade-in 0.7s ease-out",
         "slide-left": "slide-left 0.7s ease-out",
         blink: "blink 1s infinite",
+        darken: "darken 3s 1s forwards",
       },
       backgroundImage: {
         "info-gradient":

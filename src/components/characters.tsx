@@ -9,15 +9,15 @@ import { twMerge } from "tailwind-merge";
 const Characters = () => {
   const player1 = usePlayersStore((state) => state.player1);
 
-  const divClassName = twMerge(
-    "flex gap-6 container",
+  const sectionClassName = twMerge(
+    "flex gap-6 container h-full",
     !!Object.keys(player1).length
       ? "flex-row-reverse animate-slide-left"
       : "flex-row",
   );
 
   return (
-    <section className={divClassName}>
+    <section className={sectionClassName}>
       <CharacterSection />
 
       <CharacterList />

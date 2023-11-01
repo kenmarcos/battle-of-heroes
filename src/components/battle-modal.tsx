@@ -40,11 +40,11 @@ const BattleModal = () => {
           <div
             className={twMerge(
               "relative",
-              winner === player1 ? "animate-blink" : "",
+              winner === player1 ? "animate-blink" : "animate-darken",
             )}
           >
             {winner === player1 && (
-              <p className="drop-shadow-primary absolute -top-11 z-10 w-full text-center text-7xl font-black text-green-800 drop-shadow-md">
+              <p className="drop-shadow-primary absolute -top-11 z-10 w-full animate-pulse text-center text-7xl font-black text-green-800 drop-shadow-md">
                 Winner!
               </p>
             )}
@@ -68,7 +68,7 @@ const BattleModal = () => {
                   itemValue={player1TotalPower}
                   className={twMerge(
                     "text-xl font-black",
-                    winner === player1 ? "text-green-800" : "text-red-800",
+                    winner === player1 ? "text-green-800" : "",
                   )}
                 />
               </CharacterInfo.Content>
@@ -78,11 +78,11 @@ const BattleModal = () => {
           <div
             className={twMerge(
               "relative",
-              winner === player2 ? "animate-blink" : "",
+              winner === player2 ? "animate-blink" : "animate-darken",
             )}
           >
             {winner === player2 && (
-              <p className="drop-shadow-primary absolute -top-11 z-10 w-full text-center text-7xl font-black text-green-800 drop-shadow-md">
+              <p className="drop-shadow-primary absolute -top-11 z-10 w-full animate-pulse text-center text-7xl font-black text-green-800 drop-shadow-md">
                 Winner!
               </p>
             )}
@@ -106,7 +106,7 @@ const BattleModal = () => {
                   itemValue={player2TotalPower}
                   className={twMerge(
                     "text-xl font-black",
-                    winner === player2 ? "text-green-800" : "text-red-800",
+                    winner === player2 ? "text-green-800" : "",
                   )}
                 />
               </CharacterInfo.Content>

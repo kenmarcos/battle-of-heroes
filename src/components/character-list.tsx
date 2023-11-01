@@ -10,7 +10,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const CharacterList = () => {
-  const { data, isLoading, isError } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["characters"],
     queryFn: async () => {
       const { data } = await axios.get(
@@ -30,15 +30,11 @@ const CharacterList = () => {
   );
 
   if (isLoading) {
-    return <p>Loading...</p>;
-  }
-
-  if (isError) {
-    return <p>Error</p>;
+    return <p className="text-center">Loading...</p>;
   }
 
   return (
-    <section className="h-[500px] flex-1 overflow-auto rounded-lg bg-muted p-4">
+    <section className="max-h-[520px] overflow-auto rounded-lg bg-muted p-4">
       <CharacterSearch />
 
       <ul className="grid grid-cols-5 gap-4 bg-muted p-4">

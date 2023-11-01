@@ -30,8 +30,12 @@ const BattlePreparation = () => {
   };
 
   return (
-    <section className="container flex items-center justify-between gap-4">
-      <CharacterInfo.Root image={player1.images.md} imageAlt={player1.name} />
+    <section className="container flex items-center justify-evenly gap-4">
+      <CharacterInfo.Root
+        image={player1.images.md}
+        imageAlt={player1.name}
+        className="w-96"
+      />
 
       <div className="flex flex-col items-center gap-4">
         <p className="text-9xl font-black text-primary">X</p>
@@ -56,7 +60,11 @@ const BattlePreparation = () => {
         </Button>
       </div>
 
-      <CharacterInfo.Root image={player2.images.md} imageAlt={player2.name} />
+      <CharacterInfo.Root
+        image={player2.images.md}
+        imageAlt={player2.name}
+        className="w-96"
+      />
     </section>
   );
 };

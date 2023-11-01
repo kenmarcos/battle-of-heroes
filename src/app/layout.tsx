@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={oxanium.className}>
         <TanstackProvider>
-          <div className="flex flex-col">
+          <div className="flex h-full flex-col">
             <Header />
 
             <main className="flex-1">{children}</main>

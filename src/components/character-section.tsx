@@ -30,7 +30,7 @@ const CharacterSection = () => {
   return (
     <section className="w-5/12">
       {!Object.keys(characterOnHover).length && (
-        <div className="mx-auto flex h-full max-w-[322px] animate-fade-in flex-col items-center justify-center gap-4 ">
+        <div className="mx-auto flex h-full max-w-[322px] animate-fade-in flex-col items-center justify-center gap-4">
           <p className="text-4xl font-bold">
             {!Object.keys(player1).length ? "Player 1" : "Player 2"}
           </p>
@@ -42,7 +42,11 @@ const CharacterSection = () => {
       )}
 
       {!!Object.keys(characterOnHover).length && (
-        <CharacterInfo.Root image={images.lg} imageAlt={name}>
+        <CharacterInfo.Root
+          image={images.lg}
+          imageAlt={name}
+          className="mx-auto w-[390px]"
+        >
           <CharacterInfo.Content title={name}>
             {data?.map((item, index) => (
               <CharacterInfo.Item
