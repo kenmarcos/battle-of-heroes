@@ -1,14 +1,12 @@
 import { Character, CharacterOnHover } from "@/types/character";
+import { PLAYER } from "@/types/enums";
 import { create } from "zustand";
 
 interface PlayersStore {
   player1: Character;
   player2: Character;
   characterOnHover: CharacterOnHover;
-  selectCharacter: (
-    player: "player1" | "player2",
-    character: Character,
-  ) => void;
+  selectCharacter: (player: 1 | 2, character: Character) => void;
 }
 
 export const usePlayersStore = create<PlayersStore>((set) => ({
@@ -22,10 +20,10 @@ export const usePlayersStore = create<PlayersStore>((set) => ({
     }));
   },
 
-  selectCharacter: (player: "player1" | "player2", character: Character) => {
+  selectCharacter: (player: 1 | 2, character: Character) => {
     set((state) => ({
       ...state,
-      [player]: character,
+      [PLAYER[player]]: character,
     }));
   },
 }));

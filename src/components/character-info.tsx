@@ -3,22 +3,41 @@
 import Image from "next/image";
 
 import { usePlayersStore } from "@/store/players";
+import { PLAYER } from "@/types/enums";
 
-const CharacterInfo = () => {
-  const character = usePlayersStore((state) => state.characterOnHover);
+interface CharacterInfoProps {
+  player?: 1 | 2;
+}
+
+const CharacterInfo = ({ player }: CharacterInfoProps) => {
+  const characterOnHover = usePlayersStore((state) => state.characterOnHover);
+  const player1 = usePlayersStore((state) => state.player1);
+  const player2 = usePlayersStore((state) => state.player2);
+
+  let character = characterOnHover;
+
+  if (player) {
+    character = player === PLAYER.player1 ? player1 : player2;
+  }
 
   const { name, images, appearance } = character;
 
   return (
     <section className="w-5/12">
-      {!Object.keys(character).length && (
-        <p className="animate-fade-in  mx-auto flex h-full max-w-[322px] items-center text-center text-2xl">
-          Choose your hero and get ready for the battle!
-        </p>
+      {!Object.keys(characterOnHover).length && (
+        <div className="mx-auto flex h-full max-w-[322px] animate-fade-in flex-col items-center justify-center gap-4 ">
+          <p className="text-4xl font-bold">
+            {!Object.keys(player1).length ? "Player 1" : "Player 2"}
+          </p>
+
+          <p className="text-center text-2xl">
+            Choose your hero and get ready for the battle!
+          </p>
+        </div>
       )}
 
-      {!!Object.keys(character).length && (
-        <div className="animate-fade-in relative overflow-hidden rounded-lg">
+      {!!Object.keys(characterOnHover).length && (
+        <div className="relative animate-fade-in overflow-hidden rounded-lg">
           <div>
             <Image
               src={images.lg}
@@ -32,7 +51,7 @@ const CharacterInfo = () => {
             />
           </div>
 
-          <div className="bg-info-gradient absolute bottom-0 w-full space-y-2 p-4 font-bold">
+          <div className="absolute bottom-0 w-full space-y-2 bg-info-gradient p-4 font-bold">
             <h3 className="text-3xl font-black underline underline-offset-4">
               {name}
             </h3>

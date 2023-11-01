@@ -1,15 +1,12 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import CharacterInfo from "./character-info";
+import CharacterList from "./character-list";
 
 import { usePlayersStore } from "@/store/players";
 import { twMerge } from "tailwind-merge";
 
-interface TesteProps {
-  children: ReactNode;
-}
-
-const Characters = ({ children }: TesteProps) => {
+const Characters = () => {
   const player1 = usePlayersStore((state) => state.player1);
 
   const divClassName = twMerge(
@@ -19,7 +16,13 @@ const Characters = ({ children }: TesteProps) => {
       : "flex-row",
   );
 
-  return <section className={divClassName}>{children}</section>;
+  return (
+    <section className={divClassName}>
+      <CharacterInfo />
+
+      <CharacterList />
+    </section>
+  );
 };
 
 export default Characters;

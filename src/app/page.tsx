@@ -1,14 +1,18 @@
-import CharacterInfo from "@/components/character-info";
-import CharacterList from "@/components/character-list";
+"use client";
+
+import BattlePreparation from "@/components/battle-preparation";
 import Characters from "@/components/characters";
+import { usePlayersStore } from "@/store/players";
 
 const Home = () => {
-  return (
-    <Characters>
-      <CharacterInfo />
+  const player2 = usePlayersStore((state) => state.player2);
 
-      <CharacterList />
-    </Characters>
+  return (
+    <>
+      {!Object.keys(player2).length && <Characters />}
+
+      {!!Object.keys(player2).length && <BattlePreparation />}
+    </>
   );
 };
 
