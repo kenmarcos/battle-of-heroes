@@ -2,6 +2,7 @@
 
 import React from "react";
 
+import BattleModal from "./battle-modal";
 import CharacterInfo from "./character-info/character-info";
 import CharacterSection from "./character-section";
 import { Button } from "./ui/button";
@@ -42,13 +43,7 @@ const BattlePreparation = () => {
             </Button>
           </DialogTrigger>
 
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle className="text-2xl font-bold uppercase">
-                The Battle!
-              </DialogTitle>
-            </DialogHeader>
-          </DialogContent>
+          <BattleModal />
         </Dialog>
 
         <Button
