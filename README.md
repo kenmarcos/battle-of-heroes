@@ -26,8 +26,6 @@
     </a>
 </div> -->
 
-<br/>
-
 Este projeto é uma aplicação web de um jogo de batalha de heróis.
 
 A aplicação exibe uma lista de heróis que pode ser filtrada de acordo com o nome pesquisado. O usuário então escolhe dois personagens para uma batalha. O vencedor do combate será o personagem com a maior soma dos valores de cada poder que possui.
