@@ -1,7 +1,7 @@
 "use client";
 
-import CharacterInfo from "./character-info";
 import CharacterList from "./character-list";
+import CharacterSection from "./character-section";
 
 import { usePlayersStore } from "@/store/players";
 import { twMerge } from "tailwind-merge";
@@ -18,7 +18,7 @@ const Characters = () => {
 
   return (
     <section className={divClassName}>
-      <CharacterInfo />
+      <CharacterSection />
 
       <CharacterList />
     </section>

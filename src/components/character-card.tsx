@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 
+import { useCharactersStore } from "@/store/characters";
 import { usePlayersStore } from "@/store/players";
-import { Character, CharacterOnHover } from "@/types/character";
+import { Character } from "@/types/character";
 import { PLAYER } from "@/types/enums";
 
 interface CharacterCardProps {
@@ -22,30 +23,26 @@ const CharacterCard = ({ character }: CharacterCardProps) => {
 
     selectCharacter(PLAYER.player1, character);
 
-    usePlayersStore.setState({
-      characterOnHover: {} as CharacterOnHover,
+    useCharactersStore.setState({
+      characterOnHover: {} as Character,
     });
   };
 
   const handleHoverCharacter = () => {
-    usePlayersStore.setState({
-      characterOnHover: {
-        name: character.name,
-        images: character.images,
-        appearance: character.appearance,
-      },
+    useCharactersStore.setState({
+      characterOnHover: character,
     });
   };
 
   const handleLeaveCharacter = () => {
-    usePlayersStore.setState({
-      characterOnHover: {} as CharacterOnHover,
+    useCharactersStore.setState({
+      characterOnHover: {} as Character,
     });
   };
 
   return (
     <div
-      className="after:bg-info-gradient group relative cursor-pointer overflow-hidden rounded-lg after:absolute after:bottom-0 after:w-full after:break-words after:py-3 after:text-center after:text-2xl after:opacity-0 after:duration-700 after:content-[attr(after-dynamic-value)] hover:shadow-lg hover:shadow-primary hover:after:opacity-100"
+      className="group relative cursor-pointer overflow-hidden rounded-lg after:absolute after:bottom-0 after:w-full after:break-words after:bg-info-gradient after:py-3 after:text-center after:text-2xl after:opacity-0 after:duration-700 after:content-[attr(after-dynamic-value)] hover:shadow-lg hover:shadow-primary hover:after:opacity-100"
       after-dynamic-value={character.name}
       onClick={handleSelectCharacter}
       onMouseEnter={handleHoverCharacter}
